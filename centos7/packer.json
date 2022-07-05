@@ -1,0 +1,29 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<tab> text inst.ks=hd:fd0:/ks.cfg <enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "communicator": "ssh",
+      "cpus": 2,
+      "disk_size": 25360,
+      "enable_secure_boot": false,
+      "floppy_files": [
+        "ks.cfg"
+      ],
+      "generation": 1,
+      "iso_checksum": "sha256:27bd866242ee058b7a5754e83d8ee8403e216b93d130d800852a96f41c34d86a",
+      "iso_url": "CentOS-7-x86_64-Minimal-1611.iso",
+      "memory": 2048,
+      "shutdown_command": "echo 'packer'|sudo -S /sbin/halt -h -p",
+      "ssh_password": "packer",
+      "ssh_port": 22,
+      "ssh_timeout": "25m",
+      "ssh_username": "packer",
+      "switch_name": "internal_vSwitch",
+      "type": "hyperv-iso",
+      "vm_name": "packer-demo"
+    }
+  ]
+}
